@@ -65,9 +65,9 @@ module.exports = (_, argv) => ({
       name: "posting",
       filename: "remoteEntry.js",
       remotes: {
-        fragment_recommend_connections:
-          "fragment_recommend_connections@http://localhost:5001/remoteEntry.js",
-        job: "job@http://localhost:3004/remoteEntry.js",
+        // fragment_recommend_connections:
+        //   "fragment_recommend_connections@http://localhost:5001/remoteEntry.js",
+        // job: "job@http://localhost:3004/remoteEntry.js",
       },
       exposes: {
         "./injector": "./src/injector.tsx",
