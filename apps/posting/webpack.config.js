@@ -35,6 +35,13 @@ module.exports = (_, argv) => ({
         });
       });
     },
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+        runtimeErrors: true,
+      },
+    },
   },
 
   module: {
@@ -87,6 +94,7 @@ module.exports = (_, argv) => ({
         },
         "@career-up/ui-kit": {
           singleton: true,
+          shareScope: "v2",
         },
       },
     }),

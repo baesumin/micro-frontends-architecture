@@ -35,6 +35,13 @@ module.exports = (_, argv) => ({
         });
       });
     },
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+        runtimeErrors: true,
+      },
+    },
   },
 
   module: {

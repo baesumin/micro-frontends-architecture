@@ -544,6 +544,9 @@ importers:
       react-router-dom:
         specifier: ^7.1.3
         version: 7.1.3(react-dom@18.3.1)(react@18.3.1)
+      swr:
+        specifier: ^2.3.0
+        version: 2.3.0(react@18.3.1)
     devDependencies:
       '@babel/core':
         specifier: ^7.15.8
@@ -563,6 +566,9 @@ importers:
       '@career-up/shell-router':
         specifier: workspace:^
         version: link:../../packages/shell-router
+      '@types/node':
+        specifier: ^22.12.0
+        version: 22.12.0
       '@types/react':
         specifier: ^18.2.0
         version: 18.3.18
@@ -675,6 +681,9 @@ importers:
         specifier: ^5.4.0
         version: 5.4.0(react@18.3.1)
     devDependencies:
+      '@auth0/auth0-spa-js':
+        specifier: ^2.1.3
+        version: 2.1.3
       '@eslint/js':
         specifier: ^9.17.0
         version: 9.19.0
@@ -706,17 +715,17 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       typescript:
-        specifier: 5.2.2
-        version: 5.2.2
+        specifier: ^5.7.3
+        version: 5.7.3
       typescript-eslint:
         specifier: ^8.18.2
-        version: 8.22.0(eslint@9.19.0)(typescript@5.2.2)
+        version: 8.22.0(eslint@9.19.0)(typescript@5.7.3)
       vite:
         specifier: ^6.0.5
         version: 6.0.11
       vite-plugin-dts:
         specifier: ^4.5.0
-        version: 4.5.0(typescript@5.2.2)(vite@6.0.11)
+        version: 4.5.0(typescript@5.7.3)(vite@6.0.11)
 
   server:
     dependencies:
@@ -3380,25 +3389,6 @@ packages:
       he: 1.2.0
     dev: true
 
-  /@vue/language-core@2.2.0(typescript@5.2.2):
-    resolution: {integrity: sha512-O1ZZFaaBGkKbsRfnVH1ifOK1/1BUkyK+3SQsfnh6PmMmD4qJcTU8godCeA96jjDRTL6zgnK7YzCHfaUlH2r0Mw==}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@volar/language-core': 2.4.11
-      '@vue/compiler-dom': 3.5.13
-      '@vue/compiler-vue2': 2.7.16
-      '@vue/shared': 3.5.13
-      alien-signals: 0.4.14
-      minimatch: 9.0.5
-      muggle-string: 0.4.1
-      path-browserify: 1.0.1
-      typescript: 5.2.2
-    dev: true
-
   /@vue/language-core@2.2.0(typescript@5.7.3):
     resolution: {integrity: sha512-O1ZZFaaBGkKbsRfnVH1ifOK1/1BUkyK+3SQsfnh6PmMmD4qJcTU8godCeA96jjDRTL6zgnK7YzCHfaUlH2r0Mw==}
     peerDependencies:
@@ -4189,6 +4179,11 @@ packages:
   /depd@2.0.0:
     resolution: {integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==}
     engines: {node: '>= 0.8'}
+
+  /dequal@2.0.3:
+    resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
+    engines: {node: '>=6'}
+    dev: false
 
   /destroy@1.2.0:
     resolution: {integrity: sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==}
@@ -6722,6 +6717,16 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  /swr@2.3.0(react@18.3.1):
+    resolution: {integrity: sha512-NyZ76wA4yElZWBHzSgEJc28a0u6QZvhb6w0azeL2k7+Q1gAzVK+IqQYXhVOC/mzi+HZIozrZvBVeSeOZNR2bqA==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    dependencies:
+      dequal: 2.0.3
+      react: 18.3.1
+      use-sync-external-store: 1.4.0(react@18.3.1)
+    dev: false
+
   /tailwindcss@3.4.17:
     resolution: {integrity: sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==}
     engines: {node: '>=14.0.0'}
@@ -6928,22 +6933,6 @@ packages:
       media-typer: 0.3.0
       mime-types: 2.1.35
 
-  /typescript-eslint@8.22.0(eslint@9.19.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-Y2rj210FW1Wb6TWXzQc5+P+EWI9/zdS57hLEc0gnyuvdzWo8+Y8brKlbj0muejonhMI/xAZCnZZwjbIfv1CkOw==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
-      typescript: '>=4.8.4 <5.8.0'
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 8.22.0(@typescript-eslint/parser@8.22.0)(eslint@9.19.0)(typescript@5.2.2)
-      '@typescript-eslint/parser': 8.22.0(eslint@9.19.0)(typescript@5.2.2)
-      '@typescript-eslint/utils': 8.22.0(eslint@9.19.0)(typescript@5.2.2)
-      eslint: 9.19.0
-      typescript: 5.2.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /typescript-eslint@8.22.0(eslint@9.19.0)(typescript@5.7.3):
     resolution: {integrity: sha512-Y2rj210FW1Wb6TWXzQc5+P+EWI9/zdS57hLEc0gnyuvdzWo8+Y8brKlbj0muejonhMI/xAZCnZZwjbIfv1CkOw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -7064,32 +7053,6 @@ packages:
   /vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
-
-  /vite-plugin-dts@4.5.0(typescript@5.2.2)(vite@6.0.11):
-    resolution: {integrity: sha512-M1lrPTdi7gilLYRZoLmGYnl4fbPryVYsehPN9JgaxjJKTs8/f7tuAlvCCvOLB5gRDQTTKnptBcB0ACsaw2wNLw==}
-    peerDependencies:
-      typescript: '*'
-      vite: '*'
-    peerDependenciesMeta:
-      vite:
-        optional: true
-    dependencies:
-      '@microsoft/api-extractor': 7.49.1
-      '@rollup/pluginutils': 5.1.4
-      '@volar/typescript': 2.4.11
-      '@vue/language-core': 2.2.0(typescript@5.2.2)
-      compare-versions: 6.1.1
-      debug: 4.4.0
-      kolorist: 1.8.0
-      local-pkg: 0.5.1
-      magic-string: 0.30.17
-      typescript: 5.2.2
-      vite: 6.0.11
-    transitivePeerDependencies:
-      - '@types/node'
-      - rollup
-      - supports-color
-    dev: true
 
   /vite-plugin-dts@4.5.0(typescript@5.7.3)(vite@6.0.11):
     resolution: {integrity: sha512-M1lrPTdi7gilLYRZoLmGYnl4fbPryVYsehPN9JgaxjJKTs8/f7tuAlvCCvOLB5gRDQTTKnptBcB0ACsaw2wNLw==}
